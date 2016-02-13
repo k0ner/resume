@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+
+    <div class="wrapper">
+
+      <header class="page-header">
+
+        <!-- You can turn off the avatar in _config.yml by setting to false -->
+        {% if site.resume_avatar == 'true' %}
+        <img src="images/avatar-icon.png" alt="my photo" class="avatar">
+        {% endif %}
+
+        <!-- Your name is defined in the _config.yml file -->
+        <h1 class="header-name">{{ site.resume_name }}</h1>
+
+        <div class="title-bar">
+
+          <!-- Your title is also defined in the _config.yml file -->
+          <h2 class="header-title">{{ site.resume_title }}</h2>
+
+          <!-- This is the markup for the icon links; moved out to an include because it's very verbose, and you shouldn't ever need to edit the markup (unless you want to re-order the icons); if you want to customize which links appear, define them in the _config.yml file -->
+          {% include icon-links.html %}
+        </div>
+
+        <section class="executive-summary">
+          <header class="section-header">
+            <h2><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;&nbsp;Summary</h2>
+          </header>
+          <p>
+            I am young but very ambitious programmer who spends plenty of time learning new things. Java is my main programming language but I find it comfortable to play with Groovy and Scala as well. Recently Ruby and its metapprogramming possibilities attracted my attention.
+            <br/><br/>
+            I'm a team player hardly focused on exchanging knowledge. Pair programming and TDD are my tools in team. I always put a lot of attention on writing well designed and clean code as it is my highest priority. My strong personality is appreciated by a team.
+            <br/><br/>
+            Areas of interest:
+            
+            <li>Object Oriented Programming + Functional Programming</li>
+            <li>Java, Scala, Groovy</li>
+            <li>SOA/Microservices</li>
+            <li>Ruby, Ruby on Rails</li>
+            <li>Big Data (Hadoop stack)</li>
+            <li>Machine Learning</li>
+          </p>
+        </section>
+
+        {% if site.resume_looking_for_work == 'yes' %}
+        <a href="mailto:{{ site.resume_contact_email }}" class="contact-button">Contact me</a>
+        {% elsif site.resume_looking_for_work == 'no' %}
+        <a class="contact-button not-looking">I'm not looking for work right now.</a>
+        {% else %}
+        {% endif %}
+
+      </header>
+
+      {% if site.resume_section_experience %}
+      <!-- begin Experience -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2><i class="fa fa-money"></i>&nbsp;&nbsp;&nbsp;Experience</h2>
+        </header>
+
+        <!-- Duplicate these resume-item elements and edit accordingly for each job you want to add here -->
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://sii.pl" target="blank">Sii Poland</a></h3>
+          <h4 class="resume-item-details">Java Software Developer &bull; January, 2015 &mdash; Present</h4>
+          <p class="resume-item-copy">
+            Contractor at Sabre Travel Network.
+            <br/><br/>
+            Building application for travel industry:
+          </p>
+          <ul class="resume-item-list">
+            <li>developing clean, well designed, testable code</li>
+            <li>being TDD and pair programming advocate</li>
+            <li>reviewing and refactoring existing code</li>
+            <li>extending existing SOAP services & UI application consuming these services</li>
+            <li>managing Jenkins cluster & dev infrastructure</li>
+            <li>covering new functionalities with automated tests</li>
+            <li>taking part in Scrum process - came up with the idea of rotating Scrum Master</li>
+            <li>coordinating technical aspects of project</li>
+            <li>coordinating seven-person contractors team (Sii) distributed into two Scrum teams</li>
+          </ul>
+          <p class="resume-item-copy">In the meantime I am conducting first-level coding interviews.</p>
+
+        </div><!-- end of resume-item -->
+
+        <!-- another resume item -->
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://merchenta.io" target="blank">Merchenta</a></h3>
+          <h4 class="resume-item-details">Java / Scala Software Developer &bull; July, 2014 &mdash; November, 2014</h4>
+          <p class="resume-item-copy">
+            Building DSP applications:
+          </p>
+          <ul class="resume-item-list">
+            <li>maintaining existing web application built in Scala & Play</li>
+            <li>implementing new features</li>
+            <li>implementing REST API from scratch in Scala & Spray</li>
+          </ul>
+
+        </div><!-- end of resume-item -->
+        
+        <!-- another resume item -->
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://sii.pl" target="blank">Sii Poland</a></h3>
+          <h4 class="resume-item-details">Java Software Developer &bull; September, 2013 &mdash; July, 2014</h4>
+          <p class="resume-item-copy">
+            Contractor at Sabre Travel Network.
+            <br/><br/>
+            Building application for travel industry:
+          </p>
+          <ul class="resume-item-list">
+            <li>developing clean, well designed, testable code</li>
+            <li>extending existing SOAP services & UI application consuming these services</li>
+            <li>covering new functionalities with automated tests</li>
+            <li>taking part in Scrum process</li>
+          </ul>
+
+        </div><!-- end of resume-item -->
+        
+        <!-- by now you're getting the picture... -->
+        <div class="resume-item">
+          <h3 class="resume-item-title">AGH University of Science and Technology</h3>
+          <h4 class="resume-item-details">Software Engineer (part time) &bull; March, 2012 &mdash; March, 2014</h4>
+          <p class="resume-item-copy">Research and development of prototype system built on top of Apache Hadoop ecosystem including: HDFS, HBase, MapReduce, ZooKeeper; key value store (Riak) and document db (MongoDB).</p>
+
+        </div><!-- end of resume-item -->
+
+      </section>
+      <!-- end Experience -->
+      {% endif %}
+
+      {% if site.resume_section_education %}
+      <!-- begin Education -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2><i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;Education</h2>
+        </header>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://agh.edu.pl" target="blank">AGH University of Science and Technology</a></h3>
+          <h4 class="resume-item-details">Master's Degree, Computer Science &bull; 2013 &mdash; present</h4>
+          <p class="resume-item-copy">
+            Thesis in progress...
+          </p>
+        </div>
+        
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://agh.edu.pl" target="blank">AGH University of Science and Technology</a></h3>
+          <h4 class="resume-item-details">Engineer's degree, Computer Science &bull; 2009 &mdash; 2013</h4>
+          <p class="resume-item-copy">
+            More important courses:
+          </p>
+          <ul class="resume-item-list">
+            <li>Data Structures and Algorithms</li>
+            <li>Technical and Languages of Programming (based on C++ and Java)</li>
+            <li>Theory of Compiling</li>
+            <li>Theory of Concurrency</li>
+            <li>Computer Networks</li>
+            <li>Distributed Systems</li>
+            <li>Obejct-Oriented Technology</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://www.zsp1-brzesko.edu.pl/" target="blank">I Liceum Ogolnoksztalcace in Brzesko (High School)</a></h3>
+          <h4 class="resume-item-details">Matura exams, Biology, Chemistry &bull; 2006 &mdash; 2009</h4>
+          <p class="resume-item-copy">Graduated with distinction.</p>
+        </div>
+
+      </section>
+      <!-- end Education -->
+      {% endif %}
+
+      {% if site.resume_section_projects %}
+      <!-- begin Projects -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2><i class="fa fa-play-circle"></i>&nbsp;&nbsp;&nbsp;Projects</h2>
+        </header>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="https://github.com/essiembre/eclipse-rbe" target="blank">Eclipse RescourceBundle</a></h3>
+          <h4 class="resume-item-details">Contributor &bull; December, 2015 &mdash; Present</h4>
+          <p class="resume-item-copy">Eclipse plugin for editing Java resource bundles. Lets you manage all localized .properties files in one screen. Some features: sorted keys, warning icons on missing keys/values, conversion to/from Unicode, hierarchical view of keys, and more.</p>
+        </div>
+        
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://merchenta.io" target="blank">RTB API</a></h3>
+          <h4 class="resume-item-details">Contributor &bull; August, 2014 &mdash; December, 2014</h4>
+          <p class="resume-item-copy">
+            Real-time bidding REST API for programmatic media apps.
+            <br/><br/>
+            Technologies involved: Scala, Spray, Slick, Specs2, MySQL
+          </p>
+        </div>
+        
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="https://www.sabreredappcentre.sabre.com/apps/Sabre-Rail" target="blank">Sabre Rail GUI</a></h3>
+          <h4 class="resume-item-details">Contributor &bull; February, 2014 &mdash; Present</h4>
+          <p class="resume-item-copy">
+            Rail Consolidator Platform - the application for consolidating rail vendors' content (web services) and exposing as our own services. It provides complex solution for searching, shopping, booking and after sales operations (e.g. refund, exchange) using simple, well defined web services requests. 
+            <br/><br/>
+            Technologies involved: Java, Spring IoC, Spring WS, JAXB, Tomcat, JUnit, Mockito
+          </p>
+        </div>
+        
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://en.eu.sabretravelnetwork.com/home/solutions/products/sabre_rail" target="blank">Rail Consolidator Platform</a></h3>
+          <h4 class="resume-item-details">Contributor & Technical coordinator &bull; February, 2014 &mdash; Present</h4>
+          <p class="resume-item-copy">
+            Sabre Rail GUI: a fully graphical, keyboard-driven application for the Sabre Red Workspace. It provides the end to end solution for booking tickets from multiple railway vendors.
+            <br/><br/>
+            Technologies involved: Java, Eclipse RCP, OSGi, SWT, JFace, Dozer
+          </p>
+        </div>
+        
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="https://www.fslab.agh.edu.pl/#!product/fileseeker" target="blank">FileSeeker</a></h3>
+          <h4 class="resume-item-details">Contributor / GUI creator &bull; March, 2013 &mdash; March, 2014</h4>
+          <p class="resume-item-copy">
+            Application for complex phrase searching on drives (e.g. external HDD). 
+            <br/><br/>
+            Thechnologies involved: Java, Eclipse RCP, OSGi, SWT, JFace, SQLite, Apache Tika
+          </p>
+        </div>
+        
+        <div class="resume-item">
+          <h3 class="resume-item-title">Imperator</h3>
+          <h4 class="resume-item-details">Contributor &bull; September, 2013 &mdash; November, 2013</h4>
+          <p class="resume-item-copy">
+            Internal web application facilitating the comparison of configuration files.
+            <br/><br/>
+            Technologies involved: Java, Spring MVC, Jenkins remote access API, Guava, JSP, JavaScript, jQuery, Twitter Bootstrap
+          </p>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Secure File Transfer</h3>
+          <h4 class="resume-item-details">Contributor &bull; March, 2012 &mdash; February, 2013</h4>
+          <p class="resume-item-copy">
+            Back-end system for storing, securing and archiving documents (e.g. large amount of PDFs)
+            <br/><br/>
+            Technologies involved: Java, Apache HDFS, Apache Hadoop, Apache HBase, Riak, MongoDB
+          </p>
+        </div>
+        
+        <div class="resume-item">
+          <h3 class="resume-item-title">A framework enabling scalable communication in distributed OSGi environment</h3>
+          <h4 class="resume-item-details">Contributor &bull; March, 2012 &mdash; January, 2013</h4>
+          <p class="resume-item-copy">
+            The application has been developed as a Bachelor Thesis project. The main goal was to provide a distributed communication in OSGi environment using  database as a repository for services and a message oriented middleware for communication backend.
+            <br/><br/>
+            Technologies involved: Java, OSGi, CouchDB, RabbitMQ 
+          </p>
+        </div>
+
+
+      </section>
+      <!-- end Projects -->
+      {% endif %}
+
+      {% if site.resume_section_skills %}
+      <!-- begin Skills -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2><i class="fa fa-balance-scale"></i>&nbsp;&nbsp;&nbsp;Skills</h2>
+        </header>
+
+        <div class="resume-item">
+          <h4 class="resume-item-details">Programming Languages</h4>
+          <p class="resume-item-copy">Java, Scala, Spring, Mockito, JUnit, TestNG, SQL, Maven, Gradle</p>
+        </div>
+
+        <div class="resume-item">
+          <h4 class="resume-item-details">Software Engineering</h4>
+          <p class="resume-item-copy">OOP, FP, Design Patterns, TDD, Pair Programming</p>
+        </div>
+
+        <div class="resume-item">
+          <h4 class="resume-item-details">Tools</h4>
+          <p class="resume-item-copy">Linux, Git, SVN, Eclipse, IntelliJ IDEA, Jira, Confluence</p>
+        </div>
+
+      </section>
+      <!-- end Skills -->
+      {% endif %}
+
+      {% if site.resume_section_recognition %}
+      <!-- begin Recognition -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2><i class="fa fa-line-chart"></i>&nbsp;&nbsp;&nbsp;Recognition</h2>
+        </header>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://sii.pl" target="blank">Sii Poland</a></h3>
+          <h4 class="resume-item-details">Outstanding Achievement &bull; 2015</h4>
+          <p class="resume-item-copy">Awarded for interviewing more than 30 candidates during 2015.</p>
+        </div>
+
+      </section>
+      <!-- end Recognition -->
+      {% endif %}
+
+      {% if site.resume_section_associations %}
+      <!-- begin Associations -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2><i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;&nbsp;Volunteer</h2>
+        </header>
+        
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://confitura.pl" taret="blank">Confitura</a></h3>
+          <h4 class="resume-item-details">Volunteer &bull; July 2015</h4>
+          <p class="resume-item-copy">Helped to organise 2015's edition of conference.</p>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Dormitory Council</h3>
+          <h4 class="resume-item-details">President &bull; October, 2012 &mdash; April, 2014</h4>
+          <p class="resume-item-copy">Managing a group of student to help dormitory's administration & students.</p>
+        </div>
+
+      </section>
+      <!-- end Associations -->
+      {% endif %}
+
+      {% if site.resume_section_links %}
+      <!-- begin Links -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Additional Links</h2>
+        </header>
+
+        <div class="resume-item">
+          <ul class="resume-item-list">
+            <li><a href="#">Springfield Poker Club</a></li>
+            <li><a href="#">Springfield Donut Eater's User Group</a></li>
+          </ul>
+        </div>
+
+      </section>
+      <!-- end Links -->
+      {% endif %}
+
+      <footer class="page-footer">
+        <p class="footer-line">Made by <a href="http://twitter.com/jglovier">@konradtendera</a>. Fork me on <a href="https://github.com/k0ner/resume">GitHub</a>.</p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>
