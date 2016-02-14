@@ -149,13 +149,13 @@
       &:after {
         content: "\27a5";
         font-size: 30px;
-        color: #999;
+        color: #ddd;
         line-height: 0;
         display: inline-block;
         margin: 0 6px 0px 6px;
       }
 
-      &:hover {
+      &:hover, &:hover:after {
         border-bottom: none;
         color: #9c9c9c;
       }
