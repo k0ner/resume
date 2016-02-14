@@ -104,8 +104,7 @@
   margin: 1.5rem auto;
   width: 220px;
   font-size: 1.375rem;
-  font-weight: 900;
-  @include sans_light;
+  @include sans_extrabold;
   color: #333;
   line-height: 55px;
   @include transition(all .2s ease);
@@ -146,7 +145,15 @@
     a {
       color: #333;
       text-decoration: none;
-      border-bottom: 1px solid;
+
+      &:after {
+        content: "\27a5";
+        font-size: 30px;
+        color: #999;
+        line-height: 0;
+        display: inline-block;
+        margin: 0 6px 0px 6px;
+      }
 
       &:hover {
         border-bottom: none;
